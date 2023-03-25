@@ -28,7 +28,7 @@ class Wilaya(models.Model):
     mkoa_id = models.ForeignKey(Mkoa, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name
+        return f'{self.mkoa_id.name} - {self.name}'
 
     class Meta:
         db_table = 'wilaya'
@@ -49,7 +49,7 @@ class School(models.Model):
     my_types = (('ward', 'ward'), ('special', 'special'), ('technical', 'technical'))
     gender = (('male', 'male'), ('female', 'female'), ('mixture', 'mixture'))
     name = models.CharField(max_length=30)
-    kata_id = models.ForeignKey(Kata, on_delete=models.CASCADE)
+    wilaya_id = models.ForeignKey(Wilaya, on_delete=models.CASCADE)
     type = models.CharField(max_length=30, choices=my_types)
     sex = models.CharField(max_length=20, choices=gender)
 
