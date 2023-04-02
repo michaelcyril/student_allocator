@@ -1,29 +1,4 @@
-from django.shortcuts import render
-from .models import *
-from django.db.models import Q
-import math
-
-# Create your views here.
-data_from_excell = [{
-    "candidate_name": "james kulwa majuto",
-    "candidate_number": "P1278.0108.2007",
-    "sex": "male",
-    "kiswahili": "B",
-    "english": "B",
-    "maarifa": "A",
-    "hisabati": "A",
-    "science": "A",
-    "average_grade": "A",
-    "average_marks": "250",
-    "mkoa": "Tanga",
-    "wilaya": "Handeni",
-    "kata": "Biazamulo"
-},
-    {
-
-    }]
-
-shule = [
+[
  {
    "mkoa": "Arusha",
    "wilaya": "Arusha cbd",
@@ -15965,189 +15940,189 @@ shule = [
  },
  {
    "mkoa": "Mwanza",
-   "wilaya": "Nyamagana",
+   "wilaya": "Misungwi",
    "shule": "CAPRIPOINT",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Mwanza",
-   "wilaya": "Nyamagana",
+   "wilaya": "Misungwi",
    "shule": "FUMAGILA",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Mwanza",
-   "wilaya": "Nyamagana",
+   "wilaya": "Misungwi",
    "shule": "IGELEGELE",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Mwanza",
-   "wilaya": "Nyamagana",
+   "wilaya": "Misungwi",
    "shule": "IGOGO",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Mwanza",
-   "wilaya": "Nyamagana",
+   "wilaya": "Misungwi",
    "shule": "IGOMA",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Mwanza",
-   "wilaya": "Nyamagana",
+   "wilaya": "Misungwi",
    "shule": "LUCHELELE",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Mwanza",
-   "wilaya": "Nyamagana",
+   "wilaya": "Misungwi",
    "shule": "LWANHIMA",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Mwanza",
-   "wilaya": "Nyamagana",
+   "wilaya": "Misungwi",
    "shule": "MAHINA",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Mwanza",
-   "wilaya": "Nyamagana",
+   "wilaya": "Misungwi",
    "shule": "MAPANGO",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Mwanza",
-   "wilaya": "Nyamagana",
+   "wilaya": "Misungwi",
    "shule": "MBUGANI",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Mwanza",
-   "wilaya": "Nyamagana",
+   "wilaya": "Misungwi",
    "shule": "MHANDU",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Mwanza",
-   "wilaya": "Nyamagana",
+   "wilaya": "Misungwi",
    "shule": "MIRONGO",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Mwanza",
-   "wilaya": "Nyamagana",
+   "wilaya": "Misungwi",
    "shule": "MKOLANI",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Mwanza",
-   "wilaya": "Nyamagana",
+   "wilaya": "Misungwi",
    "shule": "MKUYUNI",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Mwanza",
-   "wilaya": "Nyamagana",
+   "wilaya": "Misungwi",
    "shule": "MLIMANI",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Mwanza",
-   "wilaya": "Nyamagana",
+   "wilaya": "Misungwi",
    "shule": "MTONI",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Mwanza",
-   "wilaya": "Nyamagana",
+   "wilaya": "Misungwi",
    "shule": "MWANZA",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Mwanza",
-   "wilaya": "Nyamagana",
+   "wilaya": "Misungwi",
    "shule": "NGANZA",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Mwanza",
-   "wilaya": "Nyamagana",
+   "wilaya": "Misungwi",
    "shule": "NSUMBA",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Mwanza",
-   "wilaya": "Nyamagana",
+   "wilaya": "Misungwi",
    "shule": "NYABULOGOYA",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Mwanza",
-   "wilaya": "Nyamagana",
+   "wilaya": "Misungwi",
    "shule": "NYAKABUNGO",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Mwanza",
-   "wilaya": "Nyamagana",
+   "wilaya": "Misungwi",
    "shule": "NYAKURUNDUMA",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Mwanza",
-   "wilaya": "Nyamagana",
+   "wilaya": "Misungwi",
    "shule": "NYAMAGANA",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Mwanza",
-   "wilaya": "Nyamagana",
+   "wilaya": "Misungwi",
    "shule": "NYEGEZI",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Mwanza",
-   "wilaya": "Nyamagana",
+   "wilaya": "Misungwi",
    "shule": "OLE NJOOLAY",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Mwanza",
-   "wilaya": "Nyamagana",
+   "wilaya": "Misungwi",
    "shule": "PAMBA",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Mwanza",
-   "wilaya": "Nyamagana",
+   "wilaya": "Misungwi",
    "shule": "SHAMALIWA",
    "type": "ward",
    "sex": "mixture"
@@ -24897,395 +24872,86 @@ shule = [
  },
  {
    "mkoa": "Tanga",
-   "wilaya": "Tanga",
+   "wilaya": "Tanga cbd",
    "shule": "MNYANJANI",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Tanga",
-   "wilaya": "Tanga",
+   "wilaya": "Tanga cbd",
    "shule": "MSAMBWENI",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Tanga",
-   "wilaya": "Tanga",
+   "wilaya": "Tanga cbd",
    "shule": "MWAPACHU",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Tanga",
-   "wilaya": "Tanga",
+   "wilaya": "Tanga cbd",
    "shule": "NDAOYA",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Tanga",
-   "wilaya": "Tanga",
+   "wilaya": "Tanga cbd",
    "shule": "NGUVUMALI",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Tanga",
-   "wilaya": "Tanga",
+   "wilaya": "Tanga cbd",
    "shule": "OLD TANGA",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Tanga",
-   "wilaya": "Tanga",
+   "wilaya": "Tanga cbd",
    "shule": "PANDE MAGUBENI",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Tanga",
-   "wilaya": "Tanga",
+   "wilaya": "Tanga cbd",
    "shule": "PONGWE",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Tanga",
-   "wilaya": "Tanga",
+   "wilaya": "Tanga cbd",
    "shule": "TANGA TECHNICAL",
    "type": "technical",
    "sex": "mixture"
  },
  {
    "mkoa": "Tanga",
-   "wilaya": "Tanga",
+   "wilaya": "Tanga cbd",
    "shule": "TOLEDO",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Tanga",
-   "wilaya": "Tanga",
+   "wilaya": "Tanga cbd",
    "shule": "TONGONI",
    "type": "ward",
    "sex": "mixture"
  },
  {
    "mkoa": "Tanga",
-   "wilaya": "Tanga",
+   "wilaya": "Tanga cbd",
    "shule": "USAGARA",
    "type": "ward",
    "sex": "mixture"
  }
 ]
-def InsertSchools(request):
-    for data in shule:
-        # This make sure that the id of kata is as we save in kata table
-        mkoa = Mkoa.objects.get(name=data['mkoa'])
-        w = Wilaya.objects.values('id', 'name').filter(mkoa_id=mkoa)
-        print(w)
-        print(data['wilaya'])
-        try:
-            wl = [x for x in w if x['name'].replace('\n', ' ') == data['wilaya']]
-            wilaya = Wilaya.objects.get(id=wl[0]['id'])
-        except:
-            print(data['wilaya'])
-            break
-        # k = Kata.objects.values('id', 'name').filter(wilaya_id=wilaya)
-        # kt = [x for x in k if x['name'] == data['kata']]
-        # kata = Kata.objects.get(id=kt[0]['id'])
-        ##
-# problem at kigoma cbd \n Lindi cbd double space and wang'ngombe space after '
-        school = School.objects.create(
-            name=data['shule'],
-            wilaya_id=wilaya,
-            type=data['type'],
-            sex=data['sex']
-        )
-        school.save()
-
-
-# request_ = {"year": "2022"}
-
-data_schools = [{
-    'name': 'kibamba sec',
-    'mkoa': 'Dar',
-    'wilaya': 'ubungo',
-    'kata': 'kibamba'
-}, {
-
-}]
-
-
-# def InsertSchools(request):
-#     for data in data_schools:
-#         # This make sure that the id of kata is as we save in kata table
-#         mkoa = Mkoa.objects.get(name=data['mkoa'])
-#         w = Wilaya.objects.values('id', 'name').filter(mkoa_id=mkoa)
-#         wl = [x for x in w if x['name'] == data['wilaya']]
-#         wilaya = Wilaya.objects.get(id=wl[0]['id'])
-#         k = Kata.objects.values('id', 'name').filter(wilaya_id=wilaya)
-#         kt = [x for x in k if x['name'] == data['kata']]
-#         kata = Kata.objects.get(id=kt[0]['id'])
-#         ##
-#
-#         school = School.objects.create(
-#             name=data['name'],
-#             kata_id=kata,
-#             type=data['type'],
-#             sex=data['sex']
-#         )
-#         school.save()
-
-
-def group_list(lst, group_lengths):
-    result = []
-    idx = 0
-    for length in group_lengths:
-        group = lst[idx:idx + length]
-        result.append(group)
-        idx += length
-    return result
-
-
-def specialSchool(year_id):
-    year = Year.objects.get(id=year_id)
-    # This give us required student in special schools
-    # for girls
-    special_school_f = School.objects.values('id', 'name', 'sex', 'type').filter(type="special", sex="female")
-    ssf = [x for x in special_school_f]
-    ssf_list = []
-    total_required_special_f = 0
-    for d in ssf:
-        sps = School.objects.get(id=d['id'])
-        ss_q = QuantityRequired.objects.values('quantity').get(Q(school_id=sps) and Q(year=year))
-        total_required_special_f = total_required_special_f + ss_q['quantity']
-        data = {
-            'id': d['id'],
-            'name': d['name'],
-            'sex': d['sex'],
-            'type': d['type'],
-            'quantity_required': ss_q['quantity']
-        }
-        ssf_list.append(data)
-    students_f = Student.objects.values('id', 'candidate_name', 'sex').filter(
-        Q(year=year) and Q(is_active=True) and Q(sex="female")).order_by(
-        '-average_marks')[:total_required_special_f]
-    students_fx = [x for x in students_f]
-    special_quantity_f = [x['quantity_required'] for x in ssf_list]
-    student_groups_f = group_list(students_fx, special_quantity_f)
-    output_list_f = [{'id': d['id'], 'name': d['name'], 'sex': d['sex'],
-                    'type': d['type'], 'quantity_required': d['quantity_required'],
-                    'students': sub_list} for d, sub_list in zip(ssf_list, student_groups_f)]
-    # This is to save the students to the special school
-
-    for sch in output_list_f:
-        school = School.objects.get(id=sch['id'])
-        for stu in sch['students']:
-            student = Student.objects.get(id=stu['id'])
-            data = StudentSchool.objects.create(school_id=school, student_id=student)
-            data.save
-    print('boys student saved at special school')
-
-    # for boys
-    special_school_m = School.objects.values('id', 'name', 'sex', 'type').filter(type="special", sex="male")
-    ssm = [x for x in special_school_m]
-    ssm_list = []
-    total_required_special_m = 0
-    for d in ssm:
-        sps = School.objects.get(id=d['id'])
-        ss_q = QuantityRequired.objects.values('quantity').get(Q(school_id=sps) and Q(year=year))
-        total_required_special_m = total_required_special_m + ss_q['quantity']
-        data = {
-            'id': d['id'],
-            'name': d['name'],
-            'sex': d['sex'],
-            'type': d['type'],
-            'quantity_required': ss_q['quantity']
-        }
-        ssm_list.append(data)
-    students_m = Student.objects.values('id', 'candidate_name', 'sex').filter(
-        Q(year=year) and Q(is_active=True) and Q(sex="male")).order_by(
-        '-average_marks')[:total_required_special_m]
-    students_mx = [x for x in students_m]
-    special_quantity_m = [x['quantity_required'] for x in ssm_list]
-    student_groups_m = group_list(students_mx, special_quantity_m)
-    output_list_m = [{'id': d['id'], 'name': d['name'], 'sex': d['sex'],
-                      'type': d['type'], 'quantity_required': d['quantity_required'],
-                      'students': sub_list} for d, sub_list in zip(ssm_list, student_groups_m)]
-    # This is to save the students to the special school
-
-    for sch in output_list_m:
-        school = School.objects.get(id=sch['id'])
-        for stu in sch['students']:
-            student = Student.objects.get(id=stu['id'])
-            data = StudentSchool.objects.create(school_id=school, student_id=student)
-            data.save
-        print('student saved at ' + sch['name'])
-
-
-def technicalSchool(year_id):
-    year = Year.objects.get(id=year_id)
-    # This give us required student in special schools
-    # for girls
-    special_school_f = School.objects.values('id', 'name', 'sex', 'type').filter(type="technical", sex="female")
-    ssf = [x for x in special_school_f]
-    ssf_list = []
-    total_required_special_f = 0
-    for d in ssf:
-        sps = School.objects.get(id=d['id'])
-        ss_q = QuantityRequired.objects.values('quantity').get(Q(school_id=sps) and Q(year=year))
-        total_required_special_f = total_required_special_f + ss_q['quantity']
-        data = {
-            'id': d['id'],
-            'name': d['name'],
-            'sex': d['sex'],
-            'type': d['type'],
-            'quantity_required': ss_q['quantity']
-        }
-        ssf_list.append(data)
-    students_f = Student.objects.values('id', 'candidate_name', 'sex').filter(
-        Q(year=year) and Q(is_active=True) and Q(sex="female")).order_by(
-        '-average_marks')[:total_required_special_f]
-    students_fx = [x for x in students_f]
-    special_quantity_f = [x['quantity_required'] for x in ssf_list]
-    student_groups_f = group_list(students_fx, special_quantity_f)
-    output_list_f = [{'id': d['id'], 'name': d['name'], 'sex': d['sex'],
-                      'type': d['type'], 'quantity_required': d['quantity_required'],
-                      'students': sub_list} for d, sub_list in zip(ssf_list, student_groups_f)]
-    # This is to save the students to the special school
-
-    for sch in output_list_f:
-        school = School.objects.get(id=sch['id'])
-        for stu in sch['students']:
-            student = Student.objects.get(id=stu['id'])
-            data = StudentSchool.objects.create(school_id=school, student_id=student)
-            data.save
-    print('boys student saved at special school')
-
-    # for boys
-    special_school_m = School.objects.values('id', 'name', 'sex', 'type').filter(type="technical", sex="male")
-    ssm = [x for x in special_school_m]
-    ssm_list = []
-    total_required_special_m = 0
-    for d in ssm:
-        sps = School.objects.get(id=d['id'])
-        ss_q = QuantityRequired.objects.values('quantity').get(Q(school_id=sps) and Q(year=year))
-        total_required_special_m = total_required_special_m + ss_q['quantity']
-        data = {
-            'id': d['id'],
-            'name': d['name'],
-            'sex': d['sex'],
-            'type': d['type'],
-            'quantity_required': ss_q['quantity']
-        }
-        ssm_list.append(data)
-    students_m = Student.objects.values('id', 'candidate_name', 'sex').filter(
-        Q(year=year) and Q(is_active=True) and Q(sex="male")).order_by(
-        '-average_marks')[:total_required_special_m]
-    students_mx = [x for x in students_m]
-    special_quantity_m = [x['quantity_required'] for x in ssm_list]
-    student_groups_m = group_list(students_mx, special_quantity_m)
-    output_list_m = [{'id': d['id'], 'name': d['name'], 'sex': d['sex'],
-                      'type': d['type'], 'quantity_required': d['quantity_required'],
-                      'students': sub_list} for d, sub_list in zip(ssm_list, student_groups_m)]
-    # This is to save the students to the special school
-
-    for sch in output_list_m:
-        school = School.objects.get(id=sch['id'])
-        for stu in sch['students']:
-            student = Student.objects.get(id=stu['id'])
-            data = StudentSchool.objects.create(school_id=school, student_id=student)
-            data.save
-        print('student saved at ' + sch['name'])
-
-
-def wardSchool(year_id):
-    year = Year.objects.get(id=year_id)
-    wilaya = Wilaya.objects.values('id', 'name').all()
-    w = [x for x in wilaya]
-    for i in w:
-        wly = Wilaya.objects.get(id=i['id'])
-        stu = Student.objects.values('id').filter(wilaya_id=wly, year=year)
-        # grouping list
-        sch = School.objects.values('id', 'name').filter(wilaya_id=wly)
-        sch_length = len(sch)
-        stu_length = len(stu)
-        div = stu_length/sch_length
-        grouping_length = []
-        for i in range(sch_length):
-            grouping_length.append(math.floor(div))
-        e = 0
-        for v in grouping_length:
-            e = e + v
-        grouping_length[sch_length-1] = grouping_length[sch_length-1] + stu_length - e
-        student_groups = group_list(stu, grouping_length)
-        output_list = [{'id': d['id'], 'name': d['name'], 'students': sub_list} for d, sub_list in zip(sch, student_groups)]
-
-        for i in output_list:
-            school = School.objects.get(id=i['id'])
-            for j in i['students']:
-                student = Student.objects.get(id=j['id'])
-                data = StudentSchool.objects.create(school_id=school, student_id=student)
-        print('students saved at ward ' + wilaya.name)
-
-
-def SelectionView(request):
-    specialSchool(request.data['year'])
-    print('special school done')
-
-    technicalSchool(request.data['year'])
-    print('technical school done')
-
-    wardSchool(request.data['year'])
-    print('ward school done')
-
-    year = Year.objects.get(id=request.data['year'])
-    # pangiwa
-    allocation = Allocation.objects.create(year=year)
-    allocation.save()
-    return "done"
-# request_ = {
-#     'year': 1
-# }
-
-
-
-def InsertStudentView(request):
-    year = Year.objects.get(id=request.data['year'])
-    for data in data_from_excell:
-        # This make sure that the id of kata is as we save in kata table
-        mkoa = Mkoa.objects.get(name=data['mkoa'])
-        w = Wilaya.objects.values('id', 'name').filter(mkoa_id=mkoa)
-        wl = [x for x in w if x['name'] == data['wilaya']]
-        wilaya = Wilaya.objects.get(id=wl[0]['id'])
-        # k = Kata.objects.values('id', 'name').filter(wilaya_id=wilaya)
-        # kt = [x for x in k if x['name'] == data['kata']]
-        # kata = Kata.objects.get(id=kt[0]['id'])
-        ##
-
-        student = Student.objects.create(
-            candidate_name=data['candidate_name'],
-            candidate_number=data['candidate_number'],
-            sex=data['sex'],
-            kiswahili=data['kiswahili'],
-            english=data['english'],
-            maarifa=data['maarifa'],
-            hisabati=data['hisabati'],
-            science=data['science'],
-            average_grade=data['average_grade'],
-            average_marks=data['average_marks'],
-            wilaya_id=wilaya,
-            # year=request.data['year']
-            year=year
-        )
-        student.save()
-    # ingizwa
-    selection = Selection.objects.create(year=year)
-    selection.save()
-    return 0
-
-
-# request_ = {"year": 1}

@@ -72,6 +72,16 @@ class QuantityRequired(models.Model):
         db_table = 'quantity'
 
 
+class Year(models.Model):
+    year = models.CharField(max_length=4)
+
+    def __str__(self):
+        return f'{self.year}'
+
+    class Meta:
+        db_table = 'year'
+
+
 class Student(models.Model):
     gender = (('male', 'male'), ('female', 'female'))
     candidate_name = models.CharField(max_length=200)
@@ -84,9 +94,9 @@ class Student(models.Model):
     science = models.CharField(max_length=1)
     average_grade = models.CharField(max_length=1)
     average_marks = models.CharField(max_length=1)
-    kata_id = models.ForeignKey(Kata, on_delete=models.CASCADE)
+    wilaya_id = models.ForeignKey(Wilaya, on_delete=models.CASCADE)
     is_active = models.BooleanField(default=True)
-    year = models.CharField(max_length=4)
+    year = models.ForeignKey(Year, on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.candidate_name} has average score {self.average_marks} which is {self.average_grade}'
@@ -104,3 +114,23 @@ class StudentSchool(models.Model):
 
     class Meta:
         db_table = 'student_school'
+
+
+class Allocation(models.Model):
+    year = models.ForeignKey(Year, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f''
+
+    class Meta:
+        db_table = 'allocation'
+
+
+class Selection(models.Model):
+    year = models.ForeignKey(Year, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f''
+
+    class Meta:
+        db_table = 'selection'

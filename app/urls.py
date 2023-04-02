@@ -4,5 +4,7 @@ from .views import *
 
 app_name = "app"
 urlpatterns = [
-    path('demo', InsertSchools),
+    path('demo', dumyData),
 ]
+
+

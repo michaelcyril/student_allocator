@@ -59,15 +59,15 @@ def GetWilaya(request, mkoa_id):
     return data
 
 
-def GetKata(request, wilaya_id):
+# def GetKata(request, wilaya_id):
+#     wilaya = Wilaya.objects.get(id=wilaya_id)
+#     data = Kata.objects.values('id', 'name').filter(wilaya_id=wilaya)
+#     return data
+
+
+def GetSchools(request, wilaya_id):
     wilaya = Wilaya.objects.get(id=wilaya_id)
-    data = Kata.objects.values('id', 'name').filter(wilaya_id=wilaya)
-    return data
-
-
-def GetSchools(request, kata_id):
-    kata = Kata.objects.get(id=kata_id)
-    data = School.objects.values('id', 'name', 'type', 'sex').filter(kata_id=kata)
+    data = School.objects.values('id', 'name', 'type', 'sex').filter(wilaya_id=wilaya)
     return data
 
 
@@ -85,7 +85,13 @@ def GetStudents(request, school_id):
 def SingleStudentSchool(request, cand_number):
     stud = Student.objects.get(candidate_number=cand_number)
     data = StudentSchool.objects.values('id', 'school_id').get(student_id=stud)
-    return data
+    sch = School.objects.values('name', 'type', 'sex', 'wilaya_id').get(id=data['school_id'])
+    wilaya = Wilaya.objects.values('id', 'name', 'mkoa_id').get(id=sch['wilaya_id'])
+    w = Wilaya.objects.get(id=sch['wilaya_id'])
+    mkoa = Mkoa.objects.values('name').get(id=wilaya['mkoa_id'])
+    mydata_ = {'school': sch['name'], 'type': sch['type'], 'sex': sch['sex'],
+               'mkoa': mkoa['name'], 'wilaya': wilaya['name']}
+    return mydata_
 
 
 import csv
@@ -258,13 +264,42 @@ def dumyData(request):
             "Alice", "Miles", "Delilah", "Marcus", "Brielle"]
 
         for i in first_names:
-            name = i + " " + first_names[0]
+            name = i + " " + random.choice(first_names)
             names.append(name)
+        # for gender
+        f_p = 50
+        m_p = 50
 
-        for i in range(200):
+        num_f = int(f_p / 100 * 100)
+        num_m = int(m_p / 100 * 100)
+
+
+
+
+        for i in range(10):
             reg2 = "{:04}".format(i)
             reg_no = "P" + str(reg1) + "." + str(reg2)
             marks = 0
+
+            # for gender
+            if random.randint(1, 100) <= f_p:
+                gender = 'female'
+                num_f -= 1
+            else:
+                gender = 'male'
+                num_m -= 1
+
+            if num_f == 0:
+                f_p = 0
+                m_p = 100
+
+            elif num_m == 0:
+                f_p = 100
+                m_p = 0
+            else:
+                f_p = int(num_f / (num_f + num_m) * 100)
+                m_p = 100 - f_p
+
             while True:
                 # Assign marks randomly based on the given distribution
                 p = random.random()
@@ -286,7 +321,7 @@ def dumyData(request):
             d = {
                 "candidate_name": name,
                 "candidate_number": reg_no,
-                "sex": "male",
+                "sex": gender,
                 "kiswahili": get_grade_sub(e_s),
                 "english": get_grade_sub(e_s),
                 "maarifa": get_grade_sub(e_s),
@@ -317,3 +352,16 @@ def dumyData(request):
             writer.writerow(person)
     # print(result)
     return Response({'sms': 'done'})
+
+def SomeCheckup(request):
+    wilaya = Wilaya.objects.values('id', 'name').all()
+    w = [e for e in wilaya]
+    a = []
+    for i in w:
+        sh = School.objects.values('id', 'name', 'wilaya_id').all()
+        s = [e for e in sh if e['wilaya_id'] == i['id']]
+        if len(s) == 0:
+            a.append(i['name'])
+    print(a)
+
+
